@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Top Tools Pontianak — Contoh Website oleh Kulmina Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#FFD60A; --yellow-d:#F2C200; --black:#111111; --ink:#1C1C1C;
+    --grey:#6B6B6B; --line:#E6E6E6; --bg:#FAFAF7; --orange:#F7931E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,.disp{font-family:"Barlow Condensed",Inter,sans-serif;letter-spacing:.2px}
+
+  /* sample notice */
+  .notice{background:#0A1D3F;color:#fff;font-size:13px;text-align:center;padding:8px 14px}
+  .notice b{color:#F2B233}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:var(--black);border-bottom:4px solid var(--yellow)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .badge{width:48px;height:48px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;border:3px solid #000;box-shadow:0 0 0 2px var(--yellow)}
+  .badge span{font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:21px;color:#000;letter-spacing:-1px;transform:skewX(-6deg)}
+  .logo .name{color:#fff;line-height:1}
+  .logo .name strong{display:block;font-family:"Barlow Condensed";font-style:italic;font-weight:900;font-size:22px;letter-spacing:.5px}
+  .logo .name small{font-size:10.5px;letter-spacing:2px;color:var(--yellow);font-weight:600}
+  .links{display:flex;gap:26px;color:#ddd;font-size:14px;font-weight:500}
+  .links a:hover{color:var(--yellow)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;padding:12px 20px;border-radius:8px;transition:.15s;cursor:pointer;border:0}
+  .btn-y{background:var(--yellow);color:#000}
+  .btn-y:hover{background:var(--yellow-d)}
+  .btn-o{border:2px solid #fff;color:#fff}
+  .btn-o:hover{background:#fff;color:#000}
+  .btn-k{background:var(--black);color:#fff}
+  .btn-k:hover{background:#000}
+  @media(max-width:860px){.links{display:none}}
+
+  /* hero */
+  .hero{background:var(--black);color:#fff;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 34px,rgba(255,214,10,.05) 34px 68px)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-top:70px;padding-bottom:80px}
+  .tag{display:inline-block;background:var(--yellow);color:#000;font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:4px;margin-bottom:18px}
+  .hero h1{font-size:clamp(44px,6.4vw,76px);font-weight:800;font-style:italic;line-height:.98;text-transform:uppercase}
+  .hero h1 em{color:var(--yellow);font-style:italic}
+  .hero p{color:#cfcfcf;font-size:17px;max-width:540px;margin:20px 0 30px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .brands-box{background:#1b1b1b;border:1px solid #2c2c2c;border-radius:14px;padding:24px}
+  .brands-box h3{font-size:15px;letter-spacing:2px;color:var(--yellow);text-transform:uppercase;margin-bottom:14px;font-weight:600}
+  .brand-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #2c2c2c}
+  .brand-row:first-of-type{border-top:0}
+  .bm{width:54px;height:54px;border-radius:10px;display:grid;place-items:center;font-family:"Barlow Condensed";font-weight:800;font-size:18px;flex-shrink:0}
+  .brand-row b{display:block;font-size:17px}
+  .brand-row span{font-size:13.5px;color:#aaa}
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:50px;padding-bottom:56px}}
+
+  /* trust strip */
+  .strip{background:var(--yellow)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:20px}
+  .strip div{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14.5px;color:#000}
+  .strip svg{flex-shrink:0}
+  @media(max-width:860px){.strip .wrap{grid-template-columns:1fr 1fr}}
+
+  section{padding:80px 0}
+  .head{max-width:640px;margin-bottom:40px}
+  .eyebrow{font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--orange)}
+  .head h2{font-size:clamp(34px,4.2vw,48px);font-weight:800;text-transform:uppercase;line-height:1.02;margin:8px 0 12px}
+  .head p{color:var(--grey);font-size:16.5px}
+
+  /* catalog */
+  .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .cat{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .cat-top{padding:26px 24px;color:#fff;position:relative;min-height:150px}
+  .cat-top .icon{width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,.14);display:grid;place-items:center;margin-bottom:14px}
+  .cat-top h3{font-size:28px;font-weight:800;text-transform:uppercase;line-height:1}
+  .cat-top small{display:block;font-size:13px;opacity:.85;margin-top:4px;font-weight:500}
+  .cat ul{list-style:none;padding:18px 24px 6px;flex:1}
+  .cat li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:15px;display:flex;justify-content:space-between}
+  .cat li:last-child{border-bottom:0}
+  .cat li span{color:var(--grey);font-size:13px}
+  .cat a.more{margin:12px 24px 22px;font-weight:700;font-size:14px;display:inline-flex;gap:6px;align-items:center}
+  .c1{background:linear-gradient(135deg,#1f1f1f,#3a3a3a)}
+  .c2{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+  .c3{background:linear-gradient(135deg,#00695c,#00897b)}
+  .note{font-size:13px;color:var(--grey);margin-top:16px}
+  @media(max-width:860px){.cats{grid-template-columns:1fr}}
+
+  /* who */
+  .who{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .w{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--bg)}
+  .w .n{font-family:"Barlow Condensed";font-weight:800;font-size:40px;color:var(--yellow-d);line-height:1;-webkit-text-stroke:1px #000}
+  .w h3{font-size:22px;text-transform:uppercase;margin:10px 0 6px}
+  .w p{font-size:14.5px;color:var(--grey)}
+  @media(max-width:860px){.who-grid{grid-template-columns:1fr 1fr}}
+
+  /* quote */
+  .quote{background:var(--black);color:#fff}
+  .q-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+  .quote .head p{color:#bbb}
+  .steps{list-style:none;margin-top:8px}
+  .steps li{display:flex;gap:14px;padding:14px 0;border-top:1px solid #2a2a2a;color:#ddd}
+  .steps b{background:var(--yellow);color:#000;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;font-size:14px}
+  form{background:#fff;color:var(--ink);border-radius:16px;padding:28px;display:grid;gap:14px}
+  form h3{font-size:26px;text-transform:uppercase}
+  label{font-size:13px;font-weight:600;display:block;margin-bottom:6px}
+  input,select,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--line);border-radius:8px;background:#fff}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--black)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{margin:0;font-weight:500;border:1.5px solid var(--line);padding:8px 12px;border-radius:30px;cursor:pointer;font-size:14px}
+  .chips input{display:none}
+  .chips input:checked+span{font-weight:700}
+  .chips label:has(input:checked){background:var(--yellow);border-color:var(--yellow)}
+  form small{color:var(--grey);font-size:12.5px}
+  @media(max-width:860px){.q-grid{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
+  .card h3{font-size:24px;text-transform:uppercase;margin-bottom:4px}
+  .card p.s{color:var(--grey);font-size:14.5px;margin-bottom:18px}
+  .line{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+  .line div b{display:block;font-size:15.5px}
+  .line div span{font-size:13.5px;color:var(--grey)}
+  .wa{background:#25D366;color:#fff;font-weight:700;font-size:13.5px;padding:9px 14px;border-radius:8px;white-space:nowrap}
+  .map{border-radius:14px;overflow:hidden;border:1px solid var(--line);min-height:340px;background:#ddd}
+  .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+  footer{background:var(--black);color:#aaa;font-size:14px;padding:36px 0 24px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+  footer .credit{width:100%;border-top:1px solid #2a2a2a;padding-top:18px;font-size:13px;text-align:center}
+  footer .credit a{color:#F2B233;font-weight:600}
+
+  .fab{position:fixed;right:18px;bottom:18px;z-index:30;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+
+<div class="notice">Ini adalah <b>contoh desain</b> yang dibuat oleh Kulmina Labs untuk Top Tools Pontianak — bukan situs resmi.</div>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">
+      <div class="badge"><span>TOP</span></div>
+      <div class="name"><strong>TOP TOOLS</strong><small>TOTAL OPTIMA PERKAKAS</small></div>
+    </a>
+    <div class="links">
+      <a href="#katalog">Katalog</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#penawaran">Minta Penawaran</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+    <a href="https://wa.me/628115794466" class="btn btn-y">Chat Showroom</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag">Distributor Resmi · Pontianak</span>
+      <h1>Perkakas tepat,<br><em>kerja lebih</em><br>optimal.</h1>
+      <p>Top Tools adalah distributor resmi Deli Tools, Meval, dan Scudo di Pontianak. Melayani pembelian eceran di showroom dan pembelian partai untuk toko, bengkel, serta kontraktor.</p>
+      <div class="cta">
+        <a href="#penawaran" class="btn btn-y">Minta Harga Grosir →</a>
+        <a href="#katalog" class="btn btn-o">Lihat Katalog</a>
+      </div>
+    </div>
+    <div class="brands-box">
+      <h3>Merek resmi kami</h3>
+      <div class="brand-row"><div class="bm" style="background:#E30613;color:#fff">DELI</div><div><b>Deli Tools</b><span>Perkakas tangan & power tools</span></div></div>
+      <div class="brand-row"><div class="bm" style="background:#1565c0;color:#fff">MEVAL</div><div><b>Meval</b><span>Produk kelistrikan</span></div></div>
+      <div class="brand-row"><div class="bm" style="background:#00897b;color:#fff">SCUDO</div><div><b>Scudo</b><span>Perlengkapan sanitary</span></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Produk 100% resmi</div>
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4"><rect x="1" y="6" width="14" height="11"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Layanan distribusi</div>
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-7h6v7"/></svg>Showroom di Pontianak</div>
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Respon cepat via WA</div>
+  </div>
+</div>
+
+<section id="katalog">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Katalog Produk</span>
+      <h2>Tiga merek, satu tempat belanja</h2>
+      <p>Pilih kategori, lalu tanyakan stok dan harga langsung ke tim kami. Pembelian partai mendapat penawaran khusus.</p>
+    </div>
+    <div class="cats">
+      <div class="cat">
+        <div class="cat-top c1">
+          <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+          <h3>Deli Tools</h3><small>Perkakas</small>
+        </div>
+        <ul>
+          <li>Kunci & obeng set <span>Hand tools</span></li>
+          <li>Bor & gerinda <span>Power tools</span></li>
+          <li>Tang, palu, meteran <span>Hand tools</span></li>
+          <li>Toolbox & penyimpanan <span>Aksesori</span></li>
+        </ul>
+        <a class="more" href="https://wa.me/628115794466?text=Halo%20Top%20Tools%2C%20saya%20ingin%20tanya%20stok%20produk%20Deli%20Tools.">Tanya stok Deli Tools →</a>
+      </div>
+      <div class="cat">
+        <div class="cat-top c2">
+          <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Meval</h3><small>Kelistrikan</small>
+        </div>
+        <ul>
+          <li>Stop kontak & saklar <span>Instalasi</span></li>
+          <li>Kabel roll & terminal <span>Instalasi</span></li>
+          <li>MCB & panel <span>Proteksi</span></li>
+          <li>Lampu & fitting <span>Pencahayaan</span></li>
+        </ul>
+        <a class="more" href="https://wa.me/628115794466?text=Halo%20Top%20Tools%2C%20saya%20ingin%20tanya%20stok%20produk%20Meval.">Tanya stok Meval →</a>
+      </div>
+      <div class="cat">
+        <div class="cat-top c3">
+          <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2.7C9 7 6 10.3 6 14a6 6 0 0012 0c0-3.7-3-7-6-11.3z"/></svg></div>
+          <h3>Scudo</h3><small>Sanitary</small>
+        </div>
+        <ul>
+          <li>Kran & keran dinding <span>Air bersih</span></li>
+          <li>Shower & selang <span>Kamar mandi</span></li>
+          <li>Floor drain & aksesori <span>Pembuangan</span></li>
+          <li>Wastafel & perlengkapan <span>Kamar mandi</span></li>
+        </ul>
+        <a class="more" href="https://wa.me/628115794466?text=Halo%20Top%20Tools%2C%20saya%20ingin%20tanya%20stok%20produk%20Scudo.">Tanya stok Scudo →</a>
+      </div>
+    </div>
+    <p class="note">* Daftar produk di atas adalah contoh susunan katalog. Pada website final, isi katalog mengikuti produk dan foto asli Top Tools.</p>
+  </div>
+</section>
+
+<section id="layanan" class="who">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Untuk siapa kami bekerja</span>
+      <h2>Dari tukang sampai proyek besar</h2>
+      <p>Setiap pelanggan punya kebutuhan berbeda. Karena itu kami memisahkan layanan showroom dan distribusi, supaya Anda langsung terhubung dengan tim yang tepat.</p>
+    </div>
+    <div class="who-grid">
+      <div class="w"><div class="n">01</div><h3>Toko Bangunan</h3><p>Stok ulang produk resmi dengan harga distributor dan pengiriman terjadwal.</p></div>
+      <div class="w"><div class="n">02</div><h3>Kontraktor</h3><p>Penawaran harga untuk kebutuhan proyek, lengkap per item dan jumlah.</p></div>
+      <div class="w"><div class="n">03</div><h3>Bengkel & Teknisi</h3><p>Perkakas dan power tools yang tahan dipakai setiap hari.</p></div>
+      <div class="w"><div class="n">04</div><h3>Rumah Tangga</h3><p>Datang langsung ke showroom, lihat dan coba produknya sebelum membeli.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="penawaran" class="quote">
+  <div class="wrap q-grid">
+    <div class="head" style="margin-bottom:0">
+      <span class="eyebrow" style="color:var(--yellow)">Pembelian Partai</span>
+      <h2>Minta penawaran dalam 1 menit</h2>
+      <p>Isi formulir singkat ini. Pesan Anda langsung terkirim ke CS Distribusi lewat WhatsApp, lengkap dengan detail kebutuhan.</p>
+      <ol class="steps">
+        <li><b>1</b>Isi nama, jenis usaha, dan kebutuhan Anda</li>
+        <li><b>2</b>Pesan otomatis terbuka di WhatsApp</li>
+        <li><b>3</b>Tim distribusi mengirimkan penawaran harga</li>
+      </ol>
+    </div>
+    <form id="qform">
+      <h3>Form Permintaan Penawaran</h3>
+      <div class="row2">
+        <div><label for="nm">Nama</label><input id="nm" required placeholder="Nama Anda"></div>
+        <div><label for="us">Nama usaha / proyek</label><input id="us" placeholder="Contoh: Toko Sinar Jaya"></div>
+      </div>
+      <div>
+        <label>Jenis pelanggan</label>
+        <div class="chips">
+          <label><input type="radio" name="jp" value="Toko bangunan" checked><span>Toko bangunan</span></label>
+          <label><input type="radio" name="jp" value="Kontraktor"><span>Kontraktor</span></label>
+          <label><input type="radio" name="jp" value="Bengkel/Teknisi"><span>Bengkel / Teknisi</span></label>
+          <label><input type="radio" name="jp" value="Lainnya"><span>Lainnya</span></label>
+        </div>
+      </div>
+      <div>
+        <label for="mk">Merek yang dibutuhkan</label>
+        <select id="mk"><option>Deli Tools</option><option>Meval</option><option>Scudo</option><option>Campuran</option></select>
+      </div>
+      <div><label for="kb">Daftar kebutuhan</label><textarea id="kb" rows="4" placeholder="Contoh: 20 pcs stop kontak Meval, 10 set obeng Deli"></textarea></div>
+      <button class="btn btn-k" type="submit">Kirim lewat WhatsApp →</button>
+      <small>Dengan menekan tombol, WhatsApp akan terbuka dengan pesan yang sudah terisi.</small>
+    </form>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Hubungi Kami</span>
+      <h2>Kunjungi showroom kami</h2>
+      <p>Jl. Gusti Sulung Lelanang, Komp. Pontianak Mall Blok C.3, Pontianak, Kalimantan Barat 78243.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="card">
+        <h3>Langsung ke tim yang tepat</h3>
+        <p class="s">Pilih sesuai kebutuhan Anda, supaya tidak perlu dioper-oper.</p>
+        <div class="line"><div><b>CS Showroom</b><span>Pembelian eceran & info stok · 0811-5794-466</span></div><a class="wa" href="https://wa.me/628115794466">Chat WA</a></div>
+        <div class="line"><div><b>CS Distribusi</b><span>Pembelian partai & toko · 0811-5761-166</span></div><a class="wa" href="https://wa.me/628115761166">Chat WA</a></div>
+        <div class="line"><div><b>Email</b><span>cs.toppnk@gmail.com</span></div><a class="wa" style="background:#111" href="mailto:cs.toppnk@gmail.com">Kirim email</a></div>
+        <div class="line"><div><b>Instagram</b><span>@perkakaspontianak</span></div><a class="wa" style="background:#111" href="https://www.instagram.com/perkakaspontianak/" target="_blank" rel="noopener">Ikuti</a></div>
+      </div>
+      <div class="map">
+        <iframe loading="lazy" title="Lokasi Top Tools Pontianak" src="https://www.google.com/maps?q=Pontianak+Mall+Jl.+Gusti+Sulung+Lelanang+Pontianak&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo">
+      <div class="badge"><span>TOP</span></div>
+      <div class="name"><strong>TOP TOOLS</strong><small>TOTAL OPTIMA PERKAKAS</small></div>
+    </a>
+    <div>Distributor resmi Deli Tools · Meval · Scudo — Pontianak</div>
+    <div class="credit">Contoh desain oleh <a href="https://www.instagram.com/kulmina.labs/" target="_blank" rel="noopener">Kulmina Labs</a> · PT Kulmina Sinergi Indonesia. Website final menyesuaikan logo, foto, dan konten asli Top Tools.</div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/628115794466" aria-label="Chat WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+  document.getElementById('qform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var jp = document.querySelector('input[name="jp"]:checked').value;
+    var msg = 'Halo Top Tools, saya ingin minta penawaran harga.\n\n' +
+      'Nama: ' + document.getElementById('nm').value + '\n' +
+      'Usaha/Proyek: ' + (document.getElementById('us').value || '-') + '\n' +
+      'Jenis pelanggan: ' + jp + '\n' +
+      'Merek: ' + document.getElementById('mk').value + '\n' +
+      'Kebutuhan:\n' + (document.getElementById('kb').value || '-');
+    window.open('https://wa.me/628115761166?text=' + encodeURIComponent(msg), '_blank');
+  });
+</script>
+</body>
+</html>
