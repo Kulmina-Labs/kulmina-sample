@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/decormart-ayani/logo.jpg">
+<title>Decor Mart Ayani Pontianak — Contoh Website oleh Kulmina Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --p:#673BB7; --p-d:#4E2A92; --p-l:#F1ECFA; --y:#FFD400; --ink:#1E1633;
+    --grey:#6A6478; --line:#E7E2F0; --bg:#FCFBFE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  h1,h2,h3,.disp{font-family:Nunito,Inter,sans-serif}
+
+  .notice{background:#0A1D3F;color:#fff;font-size:13px;text-align:center;padding:8px 14px}
+  .notice b{color:#F2B233}
+
+  nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo img{width:48px;height:48px;border-radius:12px;display:block}
+  .logo b{font-family:Nunito;font-weight:900;font-size:20px;color:var(--p);line-height:1}
+  .logo small{display:block;font-size:11px;letter-spacing:1.6px;color:var(--grey);font-weight:600;margin-top:3px}
+  .links{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:#4a4458}
+  .links a:hover{color:var(--p)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;padding:12px 20px;border-radius:999px;transition:.15s;cursor:pointer;border:0}
+  .btn-p{background:var(--p);color:#fff}
+  .btn-p:hover{background:var(--p-d)}
+  .btn-y{background:var(--y);color:var(--ink)}
+  .btn-y:hover{filter:brightness(.95)}
+  .btn-w{background:#fff;color:var(--p)}
+  @media(max-width:860px){.links{display:none}}
+
+  .hero{background:var(--p);color:#fff;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero:after{content:"";position:absolute;left:-80px;bottom:-160px;width:360px;height:360px;border-radius:50%;background:rgba(255,212,0,.12)}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:72px}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:18px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,.25)}
+  .dot.off{background:#F87171;box-shadow:0 0 0 3px rgba(248,113,113,.25)}
+  .hero h1{font-size:clamp(38px,5.4vw,60px);font-weight:900;line-height:1.05}
+  .hero h1 span{color:var(--y)}
+  .hero p{color:#E9E1F8;font-size:17px;max-width:520px;margin:18px 0 28px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .tile{background:#fff;color:var(--ink);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(30,10,60,.18)}
+  .tile .ic{width:46px;height:46px;border-radius:12px;background:var(--p-l);display:grid;place-items:center;margin-bottom:12px}
+  .tile b{font-family:Nunito;font-size:18px;display:block}
+  .tile span{font-size:13px;color:var(--grey)}
+  .tile.y{background:var(--y)}
+  .tile.y .ic{background:rgba(255,255,255,.55)}
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px}}
+
+  section{padding:76px 0}
+  .head{max-width:640px;margin-bottom:36px}
+  .eyebrow{font-weight:700;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;color:var(--p)}
+  .head h2{font-size:clamp(30px,3.8vw,42px);font-weight:900;line-height:1.1;margin:8px 0 10px}
+  .head p{color:var(--grey);font-size:16.5px}
+
+  .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .cat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;transition:.15s}
+  .cat:hover{border-color:var(--p);transform:translateY(-3px);box-shadow:0 12px 28px rgba(103,59,183,.12)}
+  .cat .ic{width:56px;height:56px;border-radius:14px;background:var(--p);display:grid;place-items:center;margin-bottom:16px}
+  .cat h3{font-size:22px;font-weight:900}
+  .cat p{font-size:14.5px;color:var(--grey);margin:6px 0 16px;flex:1}
+  .cat a{font-weight:700;font-size:14px;color:var(--p)}
+  .note{font-size:13px;color:var(--grey);margin-top:16px}
+  @media(max-width:860px){.cats{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.cats{grid-template-columns:1fr}}
+
+  .promo{background:var(--y)}
+  .promo .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding-top:48px;padding-bottom:48px}
+  .promo h2{font-size:clamp(28px,3.6vw,40px);font-weight:900;line-height:1.1}
+  .promo p{margin-top:10px;font-size:16px;max-width:560px}
+  .promo .box{background:#fff;border-radius:18px;padding:22px;display:grid;gap:12px}
+  .promo .box div{display:flex;gap:12px;align-items:center;font-weight:600;font-size:15px}
+  .promo .box i{font-style:normal;width:34px;height:34px;border-radius:10px;background:var(--p-l);display:grid;place-items:center;flex-shrink:0}
+  @media(max-width:860px){.promo .wrap{grid-template-columns:1fr}}
+
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .why{background:var(--p-l);border-radius:18px;padding:22px}
+  .why b{font-family:Nunito;font-size:19px;display:block;margin:10px 0 6px}
+  .why p{font-size:14.5px;color:var(--grey)}
+  @media(max-width:860px){.why-grid{grid-template-columns:1fr 1fr}}
+
+  .quote{background:var(--ink);color:#fff}
+  .q-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+  .quote .head p{color:#C9C2D8}
+  .quote .eyebrow{color:var(--y)}
+  form{background:#fff;color:var(--ink);border-radius:20px;padding:28px;display:grid;gap:14px}
+  form h3{font-size:24px;font-weight:900}
+  label{font-size:13px;font-weight:600;display:block;margin-bottom:6px}
+  input,select,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--p)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{margin:0;font-weight:500;border:1.5px solid var(--line);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:14px}
+  .chips input{display:none}
+  .chips label:has(input:checked){background:var(--p);border-color:var(--p);color:#fff}
+  form small{color:var(--grey);font-size:12.5px}
+  .benefits{list-style:none;margin-top:6px}
+  .benefits li{display:flex;gap:12px;padding:12px 0;border-top:1px solid #322a47;color:#E1DCEC}
+  .benefits b{color:var(--y)}
+  @media(max-width:860px){.q-grid{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card h3{font-size:22px;font-weight:900;margin-bottom:14px}
+  .hours{width:100%;border-collapse:collapse;font-size:15px}
+  .hours td{padding:11px 0;border-top:1px solid var(--line)}
+  .hours td:last-child{text-align:right;font-weight:600}
+  .today{margin-top:16px;background:var(--p-l);border-radius:12px;padding:14px 16px;font-weight:600;display:flex;gap:10px;align-items:center}
+  .map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:360px}
+  .map iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+  .socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .socials a{border:1.5px solid var(--line);padding:9px 14px;border-radius:999px;font-size:14px;font-weight:600}
+  .socials a:hover{border-color:var(--p);color:var(--p)}
+  @media(max-width:860px){.visit{grid-template-columns:1fr}}
+
+  footer{background:var(--p-d);color:#DCD1F2;font-size:14px;padding:34px 0 24px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center}
+  footer .logo b{color:#fff}
+  footer .logo small{color:#CFC2EA}
+  footer .credit{width:100%;border-top:1px solid rgba(255,255,255,.15);padding-top:16px;font-size:13px;text-align:center}
+  footer .credit a{color:#F2B233;font-weight:700}
+
+  .fab{position:fixed;right:18px;bottom:18px;z-index:30;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+
+<div class="notice">Ini adalah <b>contoh desain</b> yang dibuat oleh Kulmina Labs untuk Decor Mart Ayani — bukan situs resmi.</div>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="/decormart-ayani/logo.jpg" alt="Decor Mart"><div><b>Decor Mart</b><small>AYANI · PONTIANAK</small></div></a>
+    <div class="links">
+      <a href="#produk">Produk</a>
+      <a href="#promo">Promo</a>
+      <a href="#proyek">Harga Proyek</a>
+      <a href="#kunjungi">Lokasi & Jam Buka</a>
+    </div>
+    <a href="https://wa.me/6282250642168" class="btn btn-p">Tanya Stok</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill"><i class="dot" id="hdot"></i><span id="hstatus">Memeriksa jam buka…</span></span>
+      <h1>Bangun & percantik rumah, <span>semua ada di satu toko.</span></h1>
+      <p>Decor Mart adalah spesialis bahan bangunan, interior rumah, dan sanitary di Jl. Ahmad Yani, Pontianak. Dari wall panel sampai tangki air, lihat katalognya di sini lalu tanyakan stok langsung lewat WhatsApp.</p>
+      <div class="cta">
+        <a href="#produk" class="btn btn-y">Lihat Kategori Produk</a>
+        <a href="#kunjungi" class="btn btn-w">Petunjuk Arah</a>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#673BB7" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg></div><b>Wall Panel</b><span>Interior dinding</span></div>
+      <div class="tile y"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1633" stroke-width="2"><path d="M4 21V5a2 2 0 012-2h12a2 2 0 012 2v16"/><path d="M2 21h20"/><circle cx="15.5" cy="12" r="1"/></svg></div><b>Pintu</b><span>Rumah & kamar</span></div>
+      <div class="tile y"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E1633" stroke-width="2"><path d="M7 3h10v18H7z"/><path d="M7 8h10M7 14h10"/></svg></div><b>Bathroom Cabinet</b><span>Kamar mandi</span></div>
+      <div class="tile"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#673BB7" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg></div><b>Tangki Air</b><span>Penampungan air</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="produk">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Katalog</span>
+      <h2>Pilih kategori, tanya stoknya dalam satu klik</h2>
+      <p>Setiap kategori punya tombol WhatsApp dengan pesan yang sudah terisi, jadi tim kami langsung tahu produk apa yang Anda cari.</p>
+    </div>
+    <div class="cats">
+      <div class="cat"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg></div><h3>Wall Panel & Wall Board</h3><p>Panel dinding dekoratif untuk ruang tamu, kamar, dan backdrop TV, termasuk seri metal.</p><a href="https://wa.me/6282250642168?text=Halo%20Decor%20Mart%2C%20saya%20ingin%20tanya%20stok%20wall%20panel%20%2F%20wall%20board.">Tanya stok →</a></div>
+      <div class="cat"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg></div><h3>UV Board</h3><p>Panel berlapis UV yang mengilap dan mudah dibersihkan, cocok untuk dinding dan furnitur.</p><a href="https://wa.me/6282250642168?text=Halo%20Decor%20Mart%2C%20saya%20ingin%20tanya%20stok%20UV%20board.">Tanya stok →</a></div>
+      <div class="cat"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 21V5a2 2 0 012-2h12a2 2 0 012 2v16"/><path d="M2 21h20"/><circle cx="15.5" cy="12" r="1"/></svg></div><h3>Pintu</h3><p>Pilihan pintu untuk rumah, kamar, dan kamar mandi dalam berbagai model dan ukuran.</p><a href="https://wa.me/6282250642168?text=Halo%20Decor%20Mart%2C%20saya%20ingin%20tanya%20stok%20pintu.">Tanya stok →</a></div>
+      <div class="cat"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 3h10v18H7z"/><path d="M7 8h10M7 14h10"/></svg></div><h3>Bathroom Cabinet</h3><p>Kabinet kamar mandi untuk penyimpanan yang rapi dan tampilan yang lebih modern.</p><a href="https://wa.me/6282250642168?text=Halo%20Decor%20Mart%2C%20saya%20ingin%20tanya%20stok%20bathroom%20cabinet.">Tanya stok →</a></div>
+      <div class="cat"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h6v4H4zM7 8v3a5 5 0 005 5h0a5 5 0 005-5V4"/><path d="M12 16v2M10 21h4"/></svg></div><h3>Sanitary</h3><p>Shower, kran, dan perlengkapan kamar mandi lainnya untuk rumah baru maupun renovasi.</p><a href="https://wa.me/6282250642168?text=Halo%20Decor%20Mart%2C%20saya%20ingin%20tanya%20stok%20produk%20sanitary.">Tanya stok →</a></div>
+      <div class="cat"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg></div><h3>Tangki Air</h3><p>Tangki penampungan air berbagai kapasitas untuk rumah, ruko, dan usaha.</p><a href="https://wa.me/6282250642168?text=Halo%20Decor%20Mart%2C%20saya%20ingin%20tanya%20stok%20tangki%20air.">Tanya stok →</a></div>
+    </div>
+    <p class="note">* Kategori disusun dari konten Instagram Decor Mart. Pada website final, setiap kategori diisi foto dan daftar produk asli.</p>
+  </div>
+</section>
+
+<section id="promo" class="promo" style="padding:0">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--p-d)">Promo Bulan Ini</span>
+      <h2>Promo, produk baru, dan free gift, semuanya di satu halaman</h2>
+      <p>Promo yang sekarang hanya tampil di feed dan story Instagram bisa dipajang di sini. Pelanggan tidak perlu menggulir ratusan postingan untuk menemukannya.</p>
+    </div>
+    <div class="box">
+      <div><i>🏷️</i>Promo bulanan</div>
+      <div><i>✨</i>Produk baru</div>
+      <div><i>🎁</i>Free gift untuk pembelian tertentu</div>
+      <a class="btn btn-p" href="https://www.instagram.com/decormart.official/" target="_blank" rel="noopener" style="justify-content:center">Lihat promo terbaru di Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Kenapa Decor Mart</span>
+      <h2>Belanja bahan bangunan tanpa ribet</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#673BB7" stroke-width="2"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1z"/></svg><b>Satu toko, lengkap</b><p>Bahan bangunan, interior, dan sanitary dalam satu tempat.</p></div>
+      <div class="why"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#673BB7" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/></svg><b>Lokasi strategis</b><p>Di Jl. Ahmad Yani, seberang Masjid Mujahidin.</p></div>
+      <div class="why"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#673BB7" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>Buka juga hari Minggu</b><p>Senin–Sabtu sejak pagi, Minggu ke-1, 3, dan 5 tetap buka.</p></div>
+      <div class="why"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#673BB7" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><b>Tanya cepat</b><p>Cek stok dan harga lewat WhatsApp sebelum datang ke toko.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proyek" class="quote">
+  <div class="wrap q-grid">
+    <div class="head" style="margin-bottom:0">
+      <span class="eyebrow">Untuk Kontraktor & Renovasi</span>
+      <h2>Minta harga untuk kebutuhan proyek</h2>
+      <p>Sedang membangun atau merenovasi? Kirim daftar kebutuhan Anda, tim Decor Mart akan menyiapkan penawarannya.</p>
+      <ul class="benefits">
+        <li><b>01</b>Satu daftar untuk banyak produk sekaligus</li>
+        <li><b>02</b>Pesan terkirim rapi ke WhatsApp toko</li>
+        <li><b>03</b>Cocok untuk kontraktor, tukang, dan pemilik rumah</li>
+      </ul>
+    </div>
+    <form id="qform">
+      <h3>Form Permintaan Harga</h3>
+      <div class="row2">
+        <div><label for="nm">Nama</label><input id="nm" required placeholder="Nama Anda"></div>
+        <div><label for="lk">Lokasi proyek</label><input id="lk" placeholder="Contoh: Kota Baru, Pontianak"></div>
+      </div>
+      <div>
+        <label>Saya adalah</label>
+        <div class="chips">
+          <label><input type="radio" name="jp" value="Pemilik rumah" checked><span>Pemilik rumah</span></label>
+          <label><input type="radio" name="jp" value="Kontraktor"><span>Kontraktor</span></label>
+          <label><input type="radio" name="jp" value="Tukang"><span>Tukang</span></label>
+          <label><input type="radio" name="jp" value="Lainnya"><span>Lainnya</span></label>
+        </div>
+      </div>
+      <div>
+        <label for="kt">Kategori utama</label>
+        <select id="kt"><option>Wall Panel & Wall Board</option><option>UV Board</option><option>Pintu</option><option>Bathroom Cabinet</option><option>Sanitary</option><option>Tangki Air</option><option>Campuran</option></select>
+      </div>
+      <div><label for="kb">Daftar kebutuhan</label><textarea id="kb" rows="4" placeholder="Contoh: wall panel 20 lembar, 2 pintu kamar mandi, 1 tangki air"></textarea></div>
+      <button class="btn btn-p" type="submit" style="justify-content:center">Kirim lewat WhatsApp →</button>
+      <small>WhatsApp akan terbuka dengan pesan yang sudah terisi.</small>
+    </form>
+  </div>
+</section>
+
+<section id="kunjungi">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Kunjungi Kami</span>
+      <h2>Decor Mart Ayani</h2>
+      <p>Jl. Ahmad Yani, seberang Masjid Mujahidin, Pontianak.</p>
+    </div>
+    <div class="visit">
+      <div class="card">
+        <h3>Jam Buka</h3>
+        <table class="hours">
+          <tr><td>Senin – Sabtu</td><td>07.30 – 17.00</td></tr>
+          <tr><td>Minggu ke-1, 3, dan 5</td><td>09.00 – 15.30</td></tr>
+          <tr><td>Minggu ke-2 dan 4</td><td style="color:#DC2626">Tutup</td></tr>
+        </table>
+        <div class="today"><i class="dot" id="tdot"></i><span id="tstatus">Memeriksa…</span></div>
+        <div class="socials">
+          <a href="https://wa.me/6282250642168">WhatsApp 0822-5064-2168</a>
+          <a href="https://www.instagram.com/decormart.official/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@decormart_official" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe loading="lazy" title="Lokasi Decor Mart Ayani" src="https://www.google.com/maps?q=Decor+Mart+Jl.+Ahmad+Yani+Pontianak&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="/decormart-ayani/logo.jpg" alt="Decor Mart"><div><b>Decor Mart</b><small>SPESIALIS BAHAN BANGUNAN, INTERIOR & SANITARY</small></div></a>
+    <div>Jl. Ahmad Yani (seberang Masjid Mujahidin), Pontianak</div>
+    <div class="credit">Contoh desain oleh <a href="https://www.instagram.com/kulmina.labs/" target="_blank" rel="noopener">Kulmina Labs</a> · PT Kulmina Sinergi Indonesia. Website final menyesuaikan foto, produk, dan konten asli Decor Mart.</div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/6282250642168" aria-label="Chat WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+  // Status buka berdasarkan waktu Pontianak (WIB, UTC+7)
+  (function(){
+    var now = new Date(Date.now() + (new Date().getTimezoneOffset() + 420) * 60000);
+    var d = now.getDay(), m = now.getHours() * 60 + now.getMinutes();
+    var open = false, txt;
+    if (d >= 1 && d <= 6) {
+      open = m >= 450 && m < 1020;
+      txt = open ? 'Sedang buka · tutup pukul 17.00' : (m < 450 ? 'Tutup · buka hari ini pukul 07.30' : 'Tutup · buka lagi besok');
+    } else {
+      var nth = Math.ceil(now.getDate() / 7);
+      if (nth === 2 || nth === 4) { txt = 'Hari ini Minggu ke-' + nth + ' · toko tutup'; }
+      else { open = m >= 540 && m < 930; txt = open ? 'Sedang buka · tutup pukul 15.30' : (m < 540 ? 'Tutup · buka hari ini pukul 09.00' : 'Tutup · buka lagi besok pukul 07.30'); }
+    }
+    ['h','t'].forEach(function(p){
+      document.getElementById(p + 'status').textContent = txt;
+      if (!open) document.getElementById(p + 'dot').classList.add('off');
+    });
+  })();
+
+  document.getElementById('qform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var jp = document.querySelector('input[name="jp"]:checked').value;
+    var msg = 'Halo Decor Mart, saya ingin minta harga untuk kebutuhan proyek.\n\n' +
+      'Nama: ' + document.getElementById('nm').value + '\n' +
+      'Saya: ' + jp + '\n' +
+      'Lokasi proyek: ' + (document.getElementById('lk').value || '-') + '\n' +
+      'Kategori: ' + document.getElementById('kt').value + '\n' +
+      'Kebutuhan:\n' + (document.getElementById('kb').value || '-');
+    window.open('https://wa.me/6282250642168?text=' + encodeURIComponent(msg), '_blank');
+  });
+</script>
+</body>
+</html>
